@@ -66,4 +66,28 @@ storms %>%
 
 ```
 
+## One spatial data example
+
+```{r}
+vegetation <- read_sf("doc.kml") %>% select(Name) %>% 
+  clean_names()
+
+
+ggplot(data = vegetation) +
+  geom_sf(aes(fill = name), color = NA) + 
+  theme_minimal() + 
+  scale_fill_paletteer_d("ggthemes::manyeys") +
+  labs(title = "Jornada Basin LTER Vegetation", 
+       caption = "Source: Jornada LTER")
+
+```
+
+# SAVE an image file
+
+create an image
+ggsave saves the last run plot in your code as default, otherwise you can type in the name, tell it where i want to save it, could use here to point to where to save it, and what dimensions
+ 
+```{r}
+ggsave(filename = "my_awesome_map.jpg", width = 8, height = 5)
+```
 
