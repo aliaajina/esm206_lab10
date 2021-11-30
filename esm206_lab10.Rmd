@@ -1,0 +1,52 @@
+---
+title: "Cool and Sometimes Useful Stuff"
+author: "Alia Ajina"
+date: "11/30/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(usethis)
+library(janitor)
+
+# New packages
+library(beepr)
+library(praise)
+library(cowsay)
+library(paletteer)
+library(sf)
+```
+
+## Beepr beeps
+
+Use the function `beep()` in beepr package to make an audio alert when your code is done running.
+
+** paste adds spaces default in what is returned
+# EVAL = False makes it not run the entire code chunk
+
+```{r, eval = FALSE}
+for(i in rev(seq(1:99))) {
+  
+  print(paste(i, "bottles of beer on the wall"))
+  
+} 
+
+
+# beep(5)
+```
+
+## praise and cowsay
+
+packages built with a single purpose: to be kind and fun.
+
+```{r}
+praise("${Excalamtion}, ${EXCALAMATION}...${excalamtion}!!!!")
+
+
+
+```
+
+use_this::edit_r_profile() -> let's you change your r profile
