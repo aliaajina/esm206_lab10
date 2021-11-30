@@ -50,3 +50,20 @@ praise("${Excalamtion}, ${EXCALAMATION}...${excalamtion}!!!!")
 ```
 
 use_this::edit_r_profile() -> let's you change your r profile
+
+usethis::use_git()
+
+## paletteer to access thousands of color palettes and built in color schemes
+
+```{r}
+storms %>% 
+  group_by(name) %>% 
+  summarize(min_pressure = min(pressure, na.rm = TRUE)) %>% 
+  slice_min(n = 10, min_pressure) %>% # top 10 lowest recorded minimum pressures
+  ggplot(aes(x = min_pressure, y = name)) + 
+  geom_col(aes(fill = name)) +
+  scale_fill_paletteer_d("basetheme::royal") # needs to have at least 10 colors in "length"
+
+```
+
+
